@@ -1,0 +1,118 @@
+fileFormatVersion: 2
+guid: 10655ab26d74840dfb2fd25f4fe97e38
+timeCreated: 1444394148
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: "Booleanovsk\xE9_operace"
+    100002: Box
+    100004: //RootNode
+    100006: Krychle
+    100008: Krychle_1
+    100010: Krychle_1_2
+    100012: Krychle_1_3
+    100014: Krychle_2
+    100016: Krychle_2_2
+    100018: Krychle_3
+    100020: Krychle_3_2
+    100022: Podlaha
+    100024: Podlaha_1
+    100026: "Sv\u011Btlo"
+    400000: "Booleanovsk\xE9_operace"
+    400002: Box
+    400004: //RootNode
+    400006: Krychle
+    400008: Krychle_1
+    400010: Krychle_1_2
+    400012: Krychle_1_3
+    400014: Krychle_2
+    400016: Krychle_2_2
+    400018: Krychle_3
+    400020: Krychle_3_2
+    400022: Podlaha
+    400024: Podlaha_1
+    400026: "Sv\u011Btlo"
+    2300000: Krychle
+    2300002: Krychle_1
+    2300004: Krychle_1_2
+    2300006: Krychle_2
+    2300008: Krychle_2_2
+    2300010: Krychle_3
+    3300000: Krychle
+    3300002: Krychle_1
+    3300004: Krychle_1_2
+    3300006: Krychle_2
+    3300008: Krychle_2_2
+    3300010: Krychle_3
+    4300000: Krychle
+    4300002: Krychle_3
+    4300004: Krychle_2
+    4300006: Krychle_1
+    4300008: Krychle_2_2
+    4300010: Krychle_1_2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
