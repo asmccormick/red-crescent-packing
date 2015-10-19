@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - collectibleItem
+  - camera
   layers:
   - Default
   - TransparentFX

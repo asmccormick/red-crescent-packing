@@ -101,7 +101,7 @@ public class sceneDirector : MonoBehaviour {
 
 	public void MoveItemsInBox(){
 		objectsInBox[boxItemNum].transform.position = Vector3.SmoothDamp(objectsInBox[boxItemNum].transform.position, hoverPositions[boxItemNum].position, ref moveRef, 0.2f);
-		objectsInBox[boxItemNum].transform.LookAt(GameObject.Find("average_man_01/Main Camera").transform);
+		objectsInBox[boxItemNum].transform.LookAt(GameObject.FindWithTag("camera").transform);
 		if (objectsInBox[boxItemNum].transform.position == hoverPositions[boxItemNum].position){
 			boxItemNum++;
 			Debug.Log("boxItemNum = " + boxItemNum);
