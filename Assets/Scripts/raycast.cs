@@ -59,10 +59,10 @@ public class raycast : MonoBehaviour {
 
 			if (hit.transform.tag == "collectibleItem"  && canTargetObjects == true) {
 				//shouldMove = true;
-				if (Time.time - newHitTime > 2) {
+				if (Time.time - newHitTime > 1) {
 					objMoverScript = hit.transform.GetComponent<slerpMove>();
 					objMoverScript.MoveNow();
-				} else if (Time.time - newHitTime > 1){
+				} else if (Time.time - newHitTime > 0.75){
 					
 				} else if (Time.time - newHitTime > 0.5){
 					//spotlight.LookAt(hit.transform);
