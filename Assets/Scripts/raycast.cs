@@ -13,7 +13,7 @@ public class raycast : MonoBehaviour {
 	private Vector3 relativePos;
 	private Quaternion rotationToTarget;
 	//private Quaternion originalRotation;
-	private bool shouldMove;
+	//private bool shouldMove;
 	private RaycastHit hit;
 	private bool signHasBeenSeen = false;
 	private Light overheadLight;
@@ -21,6 +21,7 @@ public class raycast : MonoBehaviour {
 	private float lightSwitchStartTime;
 	private bool lightsAreSwitched;
 	private float lightSwitchDuration = 0.5f;
+	public bool canTargetObjects = false;
 
 	 
 
@@ -35,6 +36,7 @@ public class raycast : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//RaycastHit hit;
+
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);
 		Ray rayOrigin = new Ray (transform.position, transform.forward);
 		
@@ -49,13 +51,14 @@ public class raycast : MonoBehaviour {
 
 			if (hit.transform.name == "signage" && signHasBeenSeen == false) {
 				signHasBeenSeen = true;
+				canTargetObjects = true;
 				lightSwitchStartTime = Time.time;
 				//overheadLight.intensity = 1;
 				//spotlightLight.spotAngle = 15;
 			}
 
-			if (hit.transform.tag == "collectibleItem") {
-				shouldMove = true;
+			if (hit.transform.tag == "collectibleItem"  && canTargetObjects == true) {
+				//shouldMove = true;
 				if (Time.time - newHitTime > 2) {
 					objMoverScript = hit.transform.GetComponent<slerpMove>();
 					objMoverScript.MoveNow();

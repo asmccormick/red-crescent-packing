@@ -5,11 +5,6 @@ using System.Collections.Generic;
 public class sceneDirector : MonoBehaviour {
 
 	public GameObject[] checkmarks;
-	// 0 = keys
-	// 1 = glasses
-	// 2 = knife
-	// 3 = files
-	// 4 = mug
 	public int packedItemCount;
 	public string name;
 	public int itemsInBox = 0;
@@ -26,6 +21,7 @@ public class sceneDirector : MonoBehaviour {
 	private GameObject scoreImage;
 	public Material[] scores;
 	private GameObject againButton;
+	private raycast raycastScript;
 
 	// Use this for initialization
 	void Start () {
@@ -42,6 +38,7 @@ public class sceneDirector : MonoBehaviour {
 		scoreImage.SetActive(false);
 		againButton = GameObject.Find("summary page/again");
 		againButton.SetActive(false);
+		raycastScript = GameObject.FindWithTag("camera").GetComponent<raycast>();
 	}
 	
 	// Update is called once per frame
@@ -79,6 +76,7 @@ public class sceneDirector : MonoBehaviour {
 		objectsInBox.Add(go);
 		if (itemsInBox == 5) {
 			scenePhase = "move checklist";
+			raycastScript.canTargetObjects = false;
 		}
 	}
 
@@ -112,7 +110,6 @@ public class sceneDirector : MonoBehaviour {
 	}
 
 	public void ShowScore(){
-		Debug.Log("ShowScore()");
 		scoreImage.GetComponent<Renderer>().material = scores[score];
 		scoreImage.SetActive(true);
 		//yield return new WaitForSeconds(5);
