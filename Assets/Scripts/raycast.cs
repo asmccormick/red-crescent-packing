@@ -79,6 +79,10 @@ public class raycast : MonoBehaviour {
 			if (signHasBeenSeen && !lightsAreSwitched) {
 				SwitchLights();
 			}
+
+			if (hit.transform.name == "again"){
+				Application.LoadLevel("MainScene");
+			}
 		}
 	}
 

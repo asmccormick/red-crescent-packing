@@ -22,6 +22,7 @@ public class sceneDirector : MonoBehaviour {
 	public Material[] scores;
 	private GameObject againButton;
 	private raycast raycastScript;
+//	private slerpMove slerpScript;
 
 	// Use this for initialization
 	void Start () {
@@ -99,8 +100,9 @@ public class sceneDirector : MonoBehaviour {
 
 	public void MoveItemsInBox(){
 		objectsInBox[boxItemNum].transform.position = Vector3.SmoothDamp(objectsInBox[boxItemNum].transform.position, hoverPositions[boxItemNum].position, ref moveRef, 0.2f);
-		objectsInBox[boxItemNum].transform.LookAt(GameObject.FindWithTag("camera").transform);
+		//objectsInBox[boxItemNum].transform.LookAt(GameObject.FindWithTag("camera").transform);
 		if (objectsInBox[boxItemNum].transform.position == hoverPositions[boxItemNum].position){
+			//slerpScript = objectsInBox[boxItemNum].GetComponent<slerpMove>();
 			boxItemNum++;
 			Debug.Log("boxItemNum = " + boxItemNum);
 			if (boxItemNum > 4){
@@ -113,6 +115,13 @@ public class sceneDirector : MonoBehaviour {
 		scoreImage.GetComponent<Renderer>().material = scores[score];
 		scoreImage.SetActive(true);
 		//yield return new WaitForSeconds(5);
+		//againButton.SetActive(true);
+		scenePhase = "show again button";
+		StartCoroutine(ShowAgainButton());
+	}
+
+	IEnumerator ShowAgainButton(){
+		yield return new WaitForSeconds(3);
 		againButton.SetActive(true);
 	}
 }

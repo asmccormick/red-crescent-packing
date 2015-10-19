@@ -10,6 +10,10 @@ public class slerpMove : MonoBehaviour {
 	public float startTime;
 	public bool shouldMove = false;
 	private sceneDirector directorScript;
+	public bool debugRotation = false;
+
+	public bool mustRotate = false;
+	public Quaternion fixedRotation ;
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +37,10 @@ public class slerpMove : MonoBehaviour {
 				FinishedMoving();
 			}
 		}
+
+		if (debugRotation) {
+			Debug.Log("debugRot = " + transform.rotation);
+		}
 	}
 
 	public void MoveNow(){
@@ -48,5 +56,8 @@ public class slerpMove : MonoBehaviour {
 		shouldMove = false;
 		//GetComponent<Collider>().enabled = false;
 		directorScript.CheckItem(gameObject);
+		if (mustRotate) {
+			transform.rotation = fixedRotation;
+		}
 	}
 }
