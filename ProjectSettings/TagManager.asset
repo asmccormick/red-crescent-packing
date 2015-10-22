@@ -6,6 +6,7 @@ TagManager:
   tags:
   - collectibleItem
   - camera
+  - circle loader
   layers:
   - Default
   - TransparentFX

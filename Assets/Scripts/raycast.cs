@@ -22,6 +22,7 @@ public class raycast : MonoBehaviour {
 	private bool lightsAreSwitched;
 	private float lightSwitchDuration = 0.5f;
 	public bool canTargetObjects = false;
+	private Renderer circleLoader;
 
 	 
 
@@ -31,6 +32,7 @@ public class raycast : MonoBehaviour {
 		//originalRotation = spotlight.rotation;
 		overheadLight = GameObject.Find("Light - overhead").GetComponent<Light>();
 		spotlightLight = GameObject.Find("Spotlight").GetComponent<Light>();
+		circleLoader = GameObject.FindWithTag("circle loader").GetComponent<Renderer>();
 	}
 	
 	// Update is called once per frame
@@ -47,6 +49,7 @@ public class raycast : MonoBehaviour {
 			if (hit.transform != lastHit){
 				newHitTime = Time.time;
 				lastHit = hit.transform;
+				circleLoader.material.SetFloat("_Cutoff", 1); 
 			} 
 
 			if (hit.transform.name == "signage" && signHasBeenSeen == false) {
@@ -60,15 +63,12 @@ public class raycast : MonoBehaviour {
 			if (hit.transform.tag == "collectibleItem"  && canTargetObjects == true) {
 				//shouldMove = true;
 				if (Time.time - newHitTime > 1) {
+					circleLoader.material.SetFloat("_Cutoff", 1); 
 					objMoverScript = hit.transform.GetComponent<slerpMove>();
 					objMoverScript.MoveNow();
-				} else if (Time.time - newHitTime > 0.75){
-					
-				} else if (Time.time - newHitTime > 0.5){
-					//spotlight.LookAt(hit.transform);
-					//MoveSpotlight();
-					
-				}
+				} else if (Time.time - newHitTime < 1){
+					circleLoader.material.SetFloat("_Cutoff", 1 - (Time.time - newHitTime)); 
+				} 
 				relativePos = hit.transform.position - spotlight.position;
 				rotationToTarget = Quaternion.LookRotation(relativePos);
 				MoveSpotlight();
