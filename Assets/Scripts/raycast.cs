@@ -90,7 +90,6 @@ public class raycast : MonoBehaviour {
 		relativePos = hit.transform.position - spotlight.position;
 		rotationToTarget = Quaternion.LookRotation(relativePos);
 		spotlight.rotation = Quaternion.RotateTowards(spotlight.rotation, rotationToTarget, 5);
-		//if ()
 	}
 
 
